@@ -38,8 +38,8 @@ OpenWABA enables agencies to self-host and provide WhatsApp Business API service
 
 ## 🛠️ Technology Stack
 
-- **Backend**: Node.js with Express
-- **Frontend**: React with Vite, Tailwind CSS, and shadcn UI components
+- **Application**: Node.js with Express and TypeScript (Monolithic architecture)
+- **UI Framework**: React with Tailwind CSS and shadcn UI components
 - **Database**: PostgreSQL for reliable data storage
 - **Caching**: Redis for performance optimization
 - **Deployment**: Docker Compose for easy self-hosting
@@ -80,7 +80,7 @@ The application will be available at `http://localhost:3000`
 docker-compose up -d
 ```
 
-This will start the backend, frontend, PostgreSQL, and Redis all using Docker Compose.
+This will start the application, PostgreSQL, and Redis all using Docker Compose.
 
 #### Option 2: Local development with Docker for databases
 
@@ -88,33 +88,17 @@ This will start the backend, frontend, PostgreSQL, and Redis all using Docker Co
 # Start only PostgreSQL and Redis with Docker
 docker-compose up -d postgres redis
 
-# Install dependencies for backend
-cd backend
+# Install dependencies
 npm install
 
-# Install dependencies for frontend
-cd ../frontend
-npm install
-
-# Run development servers
-# Terminal 1 - Backend
-cd backend
-npm run dev
-
-# Terminal 2 - Frontend
-cd frontend
+# Run development server
 npm run dev
 ```
 
 #### Option 3: Fully local development
 
 ```bash
-# Install dependencies for backend
-cd backend
-npm install
-
-# Install dependencies for frontend
-cd ../frontend
+# Install dependencies
 npm install
 
 # Copy and configure environment variables
@@ -122,14 +106,7 @@ cp .env.example .env
 # Edit .env to point to your local PostgreSQL and Redis instances
 
 # Ensure local PostgreSQL and Redis services are running
-# Then start development servers
-
-# Terminal 1 - Backend
-cd backend
-npm run dev
-
-# Terminal 2 - Frontend
-cd frontend
+# Then start development server
 npm run dev
 ```
 
@@ -137,11 +114,17 @@ npm run dev
 
 ```
 OpenWABA/
-├── backend/             # Express backend API
-├── frontend/            # React frontend application
-├── docker/              # Docker configuration files
-├── docs/                # Documentation
-└── docker-compose.yml   # Docker Compose configuration
+├── src/
+│   ├── server/        # Express & API routes
+│   ├── client/        # React components 
+│   ├── shared/        # Shared types & utilities
+│   ├── models/        # Database models
+│   └── services/      # Business logic
+├── public/            # Static assets
+├── views/             # Server-rendered views
+├── docker/            # Docker configuration files
+├── docs/              # Documentation
+└── docker-compose.yml # Docker Compose configuration
 ```
 
 ## 🤝 Contributing
