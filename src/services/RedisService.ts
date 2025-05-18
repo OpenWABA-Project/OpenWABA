@@ -38,7 +38,7 @@ class RedisService {
    */
   async disconnect(): Promise<void> {
     if (this.isConnected) {
-      await this.client.disconnect();
+      await this.client.quit();
       this.isConnected = false;
     }
   }
@@ -60,7 +60,8 @@ class RedisService {
    */
   async get(key: string): Promise<string | null> {
     await this.connect();
-    return this.client.get(key);
+    const result = await this.client.get(key);
+    return result === null ? null : result.toString();
   }
 
   /**
@@ -84,7 +85,8 @@ class RedisService {
    */
   async hGet(key: string, field: string): Promise<string | null> {
     await this.connect();
-    return this.client.hGet(key, field);
+    const result = await this.client.hGet(key, field);
+    return result === null ? null : result.toString();
   }
 
   /**
