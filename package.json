@@ -12,7 +12,13 @@
     "lint": "eslint --ext .ts,.tsx src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["whatsapp", "business-api", "multi-tenant", "white-label", "messaging"],
+  "keywords": [
+    "whatsapp",
+    "business-api",
+    "multi-tenant",
+    "white-label",
+    "messaging"
+  ],
   "author": "OpenWABA Project",
   "license": "MIT",
   "dependencies": {
@@ -28,7 +34,6 @@
     "express": "^5.1.0",
     "express-session": "^1.18.1",
     "helmet": "^8.1.0",
-    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.511.0",
     "morgan": "^1.10.0",
     "pg": "^8.16.0",
@@ -55,6 +60,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/socket.io": "^3.0.2",
     "autoprefixer": "^10.4.21",
+    "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.7",

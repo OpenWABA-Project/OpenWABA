@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Dashboard from './pages/Dashboard';
-import Login from './pages/Login';
-import Layout from './components/Layout';
-import NotFound from './pages/NotFound';
+import Dashboard from '@/client/pages/Dashboard';
+import Login from '@/client/pages/Login';
+import Layout from '@/client/components/Layout';
+import NotFound from '@/client/pages/NotFound';
 
 const App: React.FC = () => {
   return (
